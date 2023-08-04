@@ -1,0 +1,31 @@
+.welcome {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(50, 50, 50, 0.8),
+      rgba(100, 100, 100, 0.8)
+    ),
+    url(./../../img/scott-graham-5fNmWej4tAA-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__head {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+  &__info {
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    width: 50%;
+  }
+  &__link {
+    text-decoration: none;
+    color: white;
+    font-family: inherit;
+  }
+}

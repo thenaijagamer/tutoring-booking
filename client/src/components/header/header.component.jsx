@@ -4,7 +4,7 @@ import Button from "../button/button.component";
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__container" draggable>
         <Link className="header__logo" to={"/"}>
           AcadeBooker
@@ -16,14 +16,14 @@ const Header = () => {
               Register
             </Link>
           </Button>
-          <Button style={"ml-button"}>
+          <Button style={`ml-button`}>
             <Link className="header__login" to={"/login"}>
               Login
             </Link>
           </Button>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
