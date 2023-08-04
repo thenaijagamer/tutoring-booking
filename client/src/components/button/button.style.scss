@@ -1,0 +1,12 @@
+.button {
+  font-family: inherit;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--secondary-bg-color);
+  text-decoration: none;
+  border-radius: 5px;
+  // transition: background-color 0.3s ease;
+}
+.ml-button {
+  margin-left: 1rem;
+}
