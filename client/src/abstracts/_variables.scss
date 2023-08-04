@@ -1,0 +1,21 @@
+// ## utility
+
+$radius: 4px;
+$box-shadow: 0 0.5rem 1rem rgba(#0000, 0.1);
+
+// ## Colors
+/* Define the color variables */
+:root {
+  --primary-bg-color: #0a192f;
+  --secondary-bg-color: #121b36;
+  --accent-color: #00b8d4;
+  --text-color: #eaeaea;
+  --secondary-text-color: #d9d9d9;
+}
+
+// ### dark Theme
+
+// [data-theme="dark"] {
+//   --color-elements: hsl(209, 23%, 22%);
+//   --color-text: hsl(0, 0%, 100%);
+// }
