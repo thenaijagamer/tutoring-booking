@@ -5,13 +5,31 @@ $box-shadow: 0 0.5rem 1rem rgba(#0000, 0.1);
 
 // ## Colors
 /* Define the color variables */
-:root {
-  --primary-bg-color: #323232;
-  --secondary-bg-color: #ddd0c8;
-  --accent-color: #323232;
-  --text-color: #fff;
-  --secondary-text-color: #d9d9d9;
-}
+
+//colors
+$color-primary: #3f51b5;
+$color-primary-light: #c5cae9;
+$color-primary-dark: #303f9f;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #c8e6c9;
+$color-tertiary-dark: #388e3c;
+
+$color-accent: #00bcd4;
+
+$secondary-text: #757575;
+$primary-text: #212121;
+
+$color-divider: #bdbdbd;
+$color-white: #fff;
+$color-black: #000;
+
+//box-shadows
+
+// FONT
+$default-font-size: 1.6rem;
 
 // ### dark Theme
 

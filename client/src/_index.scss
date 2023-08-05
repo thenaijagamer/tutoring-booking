@@ -29,7 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--secondary-bg-color);
-  color: var(--text-color);
+  color: $primary-text;
 
   &::-webkit-scrollbar {
     width: 8px;

@@ -5,7 +5,7 @@ import Button from "../button/button.component";
 const Welcome = () => {
   return (
     <section className="welcome">
-      <h1 className="welcome__head">Welcome to the Tutoring Booking System</h1>
+      <h1 className="welcome__head">Welcome to the AcadeBooker Institution</h1>
       <p className="welcome__info">
         Introducing a convenient way to book tutoring sessions at our
         educational institution. Explore our talented tutors and find the
