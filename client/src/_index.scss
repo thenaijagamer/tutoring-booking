@@ -28,7 +28,7 @@ body {
   @include body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--secondary-bg-color);
+  background-color: $background-color;
   color: $primary-text;
 
   &::-webkit-scrollbar {
