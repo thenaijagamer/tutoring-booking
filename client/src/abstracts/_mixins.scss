@@ -28,3 +28,36 @@
 @mixin body-font {
   font-family: "Roboto", sans-serif;
 }
+
+// REUSEABLES
+@mixin main {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+@mixin container {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: $color-white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@mixin header {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: $color-accent;
+  @include heading-font;
+}
+@mixin input {
+  padding: 8px;
+  margin-bottom: 20px;
+  width: 25rem;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  &:focus {
+    outline: 1px solid $color-accent;
+  }
+}

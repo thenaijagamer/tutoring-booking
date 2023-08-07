@@ -7,14 +7,20 @@
 // COMPONENTS
 @import "./components/header/header.style";
 @import "./components/welcome/welcome.style";
+@import "./components/bookingCard/bookingCard.style";
+@import "./components/bookings/bookings.style";
 // @import "./components/filter/filter.styles";
 // @import "./components/card-container/card-container.styles";
 // @import "./components/card/card.styles";
 @import "./components/button/button.style";
 // @import "./components/datas/datas.styles";
 // @import "./components/detail/detail.styles";
+@import "./components/footer/footer.style";
 
 // PAGES
-@import "./pages/register/register.style.scss";
-@import "./pages/login/login.style.scss";
+@import "./pages/register/register.style";
+@import "./pages/login/login.style";
+@import "./pages/userDashboard/userDashboard.style";
+@import "./pages/tutoringServices/tutorServices.style";
+@import "./pages/sessionBooking/sessionBooking.style";
 // @import "./pages/detail/detail.styles.scss";

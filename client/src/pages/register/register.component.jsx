@@ -6,7 +6,7 @@ const UserRegistration = () => {
   return (
     <div className="register">
       <div className="register__container">
-        <h2 className="register__head heading-secondary">User Registration</h2>
+        <h2 className="register__header">User Registration</h2>
         <form className="register__form">
           <label
             className="register__label register__label--name "

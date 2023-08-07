@@ -1,9 +1,8 @@
 import React from "react";
-import TutoringServicesStyles from "./TutoringServicesStyles";
 
 const TutoringServices = () => {
   return (
-    <main>
+    <div className="services">
       <div className="container">
         <h2>Tutor Search/Browse</h2>
         <form>
@@ -46,8 +45,7 @@ const TutoringServices = () => {
           </ul>
         </div>
       </div>
-      <TutoringServicesStyles />
-    </main>
+    </div>
   );
 };
 

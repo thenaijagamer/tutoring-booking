@@ -1,59 +1,25 @@
 import React from "react";
-import UserDashboardStyles from "./UserDashboardStyles";
+import Bookings from "../../components/bookings/bookings.component";
 
 const UserDashboard = () => {
   return (
-    <div>
-      <div className="container">
-        <h2>Welcome, John Doe</h2>
-        <div className="profile">
-          <h3>Profile Information</h3>
-          <p>
+    <div className="user-dashboard">
+      <div className="user-dashboard__container">
+        <h2 className="user-dashboard__header">Welcome, John Doe</h2>
+        <div className="user-profile">
+          <h3 className="user-profile__info-header">Profile Information</h3>
+          <p className="user-profile__info user-profile__info--name">
             <strong>Name:</strong> John Doe
           </p>
-          <p>
+          <p className="user-profile__info user-profile__info--email">
             <strong>Email:</strong> johndoe@example.com
           </p>
-          <p>
+          <p className="user-profile__info user-profile__info--account-type">
             <strong>Account Type:</strong> Student
           </p>
         </div>
-
-        <div className="bookings">
-          <h3>Upcoming Bookings</h3>
-          <ul>
-            <li>
-              <p>
-                <strong>Tutor:</strong> Jane Smith
-              </p>
-              <p>
-                <strong>Subject:</strong> Mathematics
-              </p>
-              <p>
-                <strong>Date:</strong> July 15, 2023
-              </p>
-              <p>
-                <strong>Time:</strong> 4:00 PM - 5:00 PM
-              </p>
-            </li>
-            <li>
-              <p>
-                <strong>Tutor:</strong> Alex Johnson
-              </p>
-              <p>
-                <strong>Subject:</strong> English
-              </p>
-              <p>
-                <strong>Date:</strong> July 17, 2023
-              </p>
-              <p>
-                <strong>Time:</strong> 2:00 PM - 3:00 PM
-              </p>
-            </li>
-          </ul>
-        </div>
+        <Bookings />
       </div>
-      <UserDashboardStyles />
     </div>
   );
 };

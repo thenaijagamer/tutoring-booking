@@ -6,6 +6,10 @@ import Header from "./components/header/header.component";
 import Home from "./pages/home/home.component";
 import UserRegistration from "./pages/register/register.component";
 import UserLogin from "./pages/login/login.component";
+import UserDashboard from "./pages/userDashboard/userDashboar.component";
+import TutoringServices from "./pages/tutoringServices/tutorServices.component";
+import SessionBookings from "./pages/sessionBooking/sessionBooking.component";
+import Footer from "./components/footer/footer.component";
 
 function App() {
   return (
@@ -15,11 +19,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<UserRegistration />} />
         <Route path="/login" element={<UserLogin />} />
-        {/* <Route path="/user-dasboard" element={<UserDashboard />} /> */}
+        <Route path="/user-dashboard" element={<UserDashboard />} />
+        <Route path="/services" element={<TutoringServices />} />
+        <Route path="/session-booking" element={<SessionBookings />} />
         {/* <Route path="/detail">
           <Route path=":id" element={<DetailPage />} />
         </Route> */}
       </Routes>
+      <Footer />
     </Router>
   );
 }

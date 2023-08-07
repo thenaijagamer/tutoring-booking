@@ -1,0 +1,8 @@
+.bookings {
+  margin-top: 5rem;
+  &__header {
+    font-size: 20px;
+    margin-bottom: 10px;
+    // @include header;
+  }
+}

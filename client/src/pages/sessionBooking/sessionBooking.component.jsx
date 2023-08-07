@@ -1,9 +1,8 @@
 import React from "react";
-import SessionBookingsStyles from "./SessionBookingsStyles";
 
 const SessionBookings = () => {
   return (
-    <main>
+    <div className="session-booking">
       <div className="container">
         <h2>Tutor Booking</h2>
         <form>
@@ -25,8 +24,7 @@ const SessionBookings = () => {
           <input type="submit" value="Book Session" />
         </form>
       </div>
-      <SessionBookingsStyles />
-    </main>
+    </div>
   );
 };
 

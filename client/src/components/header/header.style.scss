@@ -5,7 +5,8 @@
   height: 6rem;
   z-index: 10;
 
-  &__container-1 {
+  &__container-1,
+  &__container-2 {
     margin: 0 auto;
     height: 100%;
     width: 85%;
@@ -26,6 +27,10 @@
     //   font-size: 1.6rem;
     // }
   }
+  &__search {
+    @include input;
+    margin-bottom: 0;
+  }
   &__entry {
     display: flex;
     align-items: center;
@@ -38,5 +43,18 @@
   }
   &__login {
     margin-left: 1rem;
+  }
+  &__services,
+  &__history,
+  &__logout {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    &:hover {
+      color: $color-accent;
+    }
+  }
+  &__services {
+    margin-right: 2rem;
   }
 }

@@ -7,7 +7,7 @@ const UserLogin = () => {
   return (
     <div className="login">
       <div className="login__container">
-        <h2 className="login__head">User Login</h2>
+        <h2 className="login__header">User Login</h2>
         <form className="login__form">
           <label
             className="login__label login__label--email"
