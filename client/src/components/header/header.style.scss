@@ -5,7 +5,7 @@
   height: 6rem;
   z-index: 10;
 
-  &__container {
+  &__container-1 {
     margin: 0 auto;
     height: 100%;
     width: 85%;
@@ -35,5 +35,8 @@
     color: $color-white;
     text-decoration: none;
     font-family: inherit;
+  }
+  &__login {
+    margin-left: 1rem;
   }
 }

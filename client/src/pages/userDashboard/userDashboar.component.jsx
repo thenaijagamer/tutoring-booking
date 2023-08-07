@@ -3,7 +3,7 @@ import UserDashboardStyles from "./UserDashboardStyles";
 
 const UserDashboard = () => {
   return (
-    <main>
+    <div>
       <div className="container">
         <h2>Welcome, John Doe</h2>
         <div className="profile">
@@ -54,7 +54,7 @@ const UserDashboard = () => {
         </div>
       </div>
       <UserDashboardStyles />
-    </main>
+    </div>
   );
 };
 

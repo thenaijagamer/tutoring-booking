@@ -11,11 +11,9 @@ const Welcome = () => {
         educational institution. Explore our talented tutors and find the
         perfect match for your learning needs.
       </p>
-      <Button>
-        <Link className="welcome__link" to={"/register"}>
-          Get started
-        </Link>
-      </Button>
+      <Link className="welcome__link" to={"/register"}>
+        <Button>Get started</Button>
+      </Link>
     </section>
   );
 };

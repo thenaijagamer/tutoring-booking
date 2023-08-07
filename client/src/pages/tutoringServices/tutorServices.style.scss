@@ -1,0 +1,100 @@
+main {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+label {
+  margin-bottom: 10px;
+  color: #666666;
+}
+
+input {
+  padding: 8px;
+  margin-bottom: 20px;
+  width: 250px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.tutor-list {
+  margin-bottom: 40px;
+}
+
+.tutor-list h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.tutor-list ul {
+  list-style: none;
+  text-align: left;
+}
+
+.tutor-list ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.tutor-info h4 {
+  font-size: 18px;
+  color: #333333;
+}
+
+.tutor-info p {
+  color: #666666;
+  margin-bottom: 5px;
+}
+
+.tutor-actions a {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-top: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.tutor-actions a:hover {
+  background-color: #0056b3;
+}

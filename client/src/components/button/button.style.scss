@@ -4,12 +4,17 @@
   padding: 1rem 2rem;
   background-color: $color-accent;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 5px;
   text-transform: uppercase;
   border: none;
   box-shadow: $box-shadow;
-  font-size: 1.6rem;
+  font-size: $default-font-size;
+  color: $color-white;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-accent-h;
+  }
 }
-.ml-button {
-  margin-left: 1rem;
-}
+// .ml-button {
+//   margin-left: 1rem;
+// }

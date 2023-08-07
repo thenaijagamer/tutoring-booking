@@ -1,0 +1,43 @@
+.login {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+
+  &__container {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: $color-white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  &__head {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    color: $color-accent;
+    @include heading-font;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__label {
+    margin-bottom: 1rem;
+    color: $secondary-text;
+  }
+  &__input {
+    padding: 8px;
+    margin-bottom: 20px;
+    width: 250px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    &:focus {
+      outline: 1px solid $color-accent;
+    }
+  }
+  &__register-link {
+    text-decoration: none;
+    color: $color-accent;
+    margin-left: 1rem;
+  }
+}

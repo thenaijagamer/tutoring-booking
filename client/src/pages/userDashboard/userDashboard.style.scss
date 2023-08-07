@@ -17,17 +17,38 @@ h2 {
   color: #333333;
 }
 
-.confirmation-info {
+.profile,
+.bookings {
   margin-bottom: 40px;
 }
 
-.confirmation-info h3 {
+.profile h3,
+.bookings h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #333333;
 }
 
-.confirmation-info p {
+.profile p,
+.bookings ul {
+  text-align: left;
+  margin-bottom: 20px;
   color: #666666;
-  margin-bottom: 5px;
+}
+
+.profile strong,
+.bookings strong {
+  font-weight: bold;
+}
+
+.bookings ul li {
+  margin-bottom: 20px;
+  list-style-type: none;
+  border-top: 1px solid #dddddd;
+  padding-top: 10px;
+}
+
+.bookings ul li:first-child {
+  border-top: none;
+  padding-top: 0;
 }

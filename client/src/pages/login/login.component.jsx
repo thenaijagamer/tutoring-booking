@@ -1,26 +1,52 @@
 import React from "react";
-import Button from "./Button";
+import { Link } from "react-router-dom";
+
+import Button from "../../components/button/button.component";
 
 const UserLogin = () => {
   return (
-    <main>
-      <div className="container">
-        <h2>User Login</h2>
-        <form>
-          <label htmlFor="loginEmail">Email:</label>
-          <input type="email" id="loginEmail" name="loginEmail" required />
-
-          <label htmlFor="loginPassword">Password:</label>
+    <div className="login">
+      <div className="login__container">
+        <h2 className="login__head">User Login</h2>
+        <form className="login__form">
+          <label
+            className="login__label login__label--email"
+            htmlFor="loginEmail"
+          >
+            Email:
+          </label>
           <input
+            className="login__input login__input--email"
+            type="email"
+            id="loginEmail"
+            name="loginEmail"
+            required
+          />
+
+          <label
+            className="login__label login__label--password"
+            htmlFor="loginPassword"
+          >
+            Password:
+          </label>
+          <input
+            className="login__input login__input--password"
             type="password"
             id="loginPassword"
             name="loginPassword"
             required
           />
+
           <Button type="submit">Login</Button>
         </form>
       </div>
-    </main>
+      <p>
+        New to AcadeBooker?
+        <Link className="login__register-link" to={"/register"}>
+          Join now
+        </Link>
+      </p>
+    </div>
   );
 };
 

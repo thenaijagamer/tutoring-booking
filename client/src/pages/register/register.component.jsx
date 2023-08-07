@@ -1,25 +1,65 @@
 import React from "react";
-import Button from "./Button";
+import { Link } from "react-router-dom";
+import Button from "../../components/button/button.component";
 
 const UserRegistration = () => {
   return (
-    <main>
-      <div className="container">
-        <h2>User Registration</h2>
-        <form>
-          <label htmlFor="name">Full Name:</label>
-          <input type="text" id="name" name="name" required />
+    <div className="register">
+      <div className="register__container">
+        <h2 className="register__head heading-secondary">User Registration</h2>
+        <form className="register__form">
+          <label
+            className="register__label register__label--name "
+            htmlFor="name"
+          >
+            Full Name:
+          </label>
+          <input
+            className="register__input"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
 
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <label
+            className="register__label register__label--email"
+            htmlFor="email"
+          >
+            Email:
+          </label>
+          <input
+            className="register__input"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
 
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" required />
+          <label
+            className="register__label register__label--password"
+            htmlFor="password"
+          >
+            Password:
+          </label>
+          <input
+            className="register__input"
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
 
           <Button type="submit">Register</Button>
         </form>
       </div>
-    </main>
+      <p>
+        Already have an account?
+        <Link className="register__login-link" to={"/login"}>
+          Login now
+        </Link>
+      </p>
+    </div>
   );
 };
 
