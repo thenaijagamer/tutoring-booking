@@ -1,5 +1,4 @@
 import React from "react";
-import BookingConfirmationStyles from "./BookingConfirmationStyles";
 
 const BookingConfirmation = () => {
   return (
@@ -25,7 +24,6 @@ const BookingConfirmation = () => {
           </p>
         </div>
       </div>
-      <BookingConfirmationStyles />
     </main>
   );
 };

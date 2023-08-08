@@ -44,6 +44,7 @@
   &__login {
     margin-left: 1rem;
   }
+  &__profile,
   &__services,
   &__history,
   &__logout {
@@ -54,7 +55,9 @@
       color: $color-accent;
     }
   }
-  &__services {
-    margin-right: 2rem;
+  &__nav-link {
+    // &:not(:last-child) {
+    margin-left: 2rem;
+    // }
   }
 }

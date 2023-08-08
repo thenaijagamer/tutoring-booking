@@ -30,17 +30,13 @@ label {
 
 input,
 select {
-  padding: 8px;
-  margin-bottom: 20px;
-  width: 250px;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
+  @include input;
 }
 
 input[type="submit"] {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: #ffffff;
+  background-color: $color-accent;
+  color: $color-white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -48,5 +44,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: $color-accent-h;
 }

@@ -1,18 +1,20 @@
 .booking {
-  margin-bottom: 2rem;
-  list-style-type: none;
-  border-top: 1px solid #dddddd;
-  padding-top: 1rem;
-  &__info {
-    text-align: left;
-    margin-bottom: 1rem;
-    color: $secondary-text;
-    span {
-      color: $primary-text;
-    }
+  padding-bottom: 2rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 2rem;
   }
-  &:first-child {
-    border-top: none;
-    padding-top: 0;
+
+  &__info {
+    color: $secondary-text;
+    margin-bottom: 5px;
+    // strong {
+    //   color: $primary-text;
+    // }
   }
 }

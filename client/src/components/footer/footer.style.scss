@@ -1,9 +1,15 @@
 footer {
   background-color: #333333;
   color: $color-white;
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4.5rem;
   p {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }

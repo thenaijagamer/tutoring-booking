@@ -30,10 +30,13 @@ const Header = () => {
         </Link>
 
         <div className="header__entry">
-          <Link className="header__services" to={"/services"}>
+          <Link className="header__nav-link header__profile" to={"/services"}>
+            Profile
+          </Link>
+          <Link className="header__nav-link header__services" to={"/services"}>
             Services
           </Link>
-          <Link className="header__history" to={"/history"}>
+          <Link className="header__nav-link header__history" to={"/history"}>
             Booking history
           </Link>
         </div>
