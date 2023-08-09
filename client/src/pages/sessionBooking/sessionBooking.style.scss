@@ -1,48 +1,24 @@
 .session-booking {
-  max-width: 800px;
-  margin: 50px auto;
-  text-align: center;
-}
+  @include main;
+  &__container {
+    @include container;
+  }
+  &__header {
+    @include header;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  &__label {
+    margin-bottom: 10px;
+    color: #666666;
+  }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333333;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-label {
-  margin-bottom: 10px;
-  color: #666666;
-}
-
-input,
-select {
-  @include input;
-}
-
-input[type="submit"] {
-  padding: 10px 20px;
-  background-color: $color-accent;
-  color: $color-white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-input[type="submit"]:hover {
-  background-color: $color-accent-h;
+  input,
+  select {
+    @include input;
+  }
 }

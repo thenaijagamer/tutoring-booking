@@ -1,5 +1,5 @@
-@import "./abstracts/mixins";
 @import "./abstracts/variables";
+@import "./abstracts/mixins";
 
 @import "./index";
 @import "./App";
@@ -8,6 +8,7 @@
 @import "./components/header/header.style";
 @import "./components/welcome/welcome.style";
 @import "./components/bookingCard/bookingCard.style";
+@import "./components/tutor/tutor.style";
 @import "./components/bookings/bookings.style";
 // @import "./components/filter/filter.styles";
 // @import "./components/card-container/card-container.styles";

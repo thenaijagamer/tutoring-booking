@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Button from "../button/button.component";
+
 const Tutor = () => {
   return (
     <li className="tutor">
@@ -17,11 +19,11 @@ const Tutor = () => {
         </p>
       </div>
       <div className="tutor__actions">
-        <Link className="tutor__action-link" to={"#"}>
-          View Profile
+        <Link className="tutor__profile" to={"/"}>
+          <Button>View Profile</Button>
         </Link>
-        <Link className="tutor__action-link" to={"/session-booking"}>
-          Book Session
+        <Link className="tutor__session" to={"/session-booking"}>
+          <Button>Book Session</Button>
         </Link>
       </div>
     </li>

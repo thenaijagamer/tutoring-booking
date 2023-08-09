@@ -30,7 +30,10 @@ const Header = () => {
         </Link>
 
         <div className="header__entry">
-          <Link className="header__nav-link header__profile" to={"/services"}>
+          <Link
+            className="header__nav-link header__profile"
+            to={"/user-dashboard"}
+          >
             Profile
           </Link>
           <Link className="header__nav-link header__services" to={"/services"}>

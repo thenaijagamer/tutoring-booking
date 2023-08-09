@@ -1,0 +1,21 @@
+.tutor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dddddd;
+  }
+  &__header {
+    font-size: 1.8rem;
+  }
+  &__info-item {
+    color: $secondary-text;
+    margin-bottom: 5px;
+  }
+  &__profile {
+    margin-right: 2rem;
+  }
+}

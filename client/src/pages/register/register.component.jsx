@@ -50,7 +50,7 @@ const UserRegistration = () => {
             required
           />
 
-          <Button type="submit">Register</Button>
+          <input type="submit" value="Register" />
         </form>
       </div>
       <p>

@@ -7,7 +7,7 @@ const UserDashboard = () => {
       <div className="user-dashboard__container">
         <h2 className="user-dashboard__header">Welcome, John Doe</h2>
         <div className="user-profile">
-          <h3 className="user-profile__info-header">Profile Information</h3>
+          <h3 className="user-profile__header">Profile Information</h3>
           <p className="user-profile__info user-profile__info--name">
             <strong>Name:</strong> John Doe
           </p>

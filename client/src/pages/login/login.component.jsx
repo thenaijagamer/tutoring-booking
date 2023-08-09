@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Button from "../../components/button/button.component";
-
 const UserLogin = () => {
   return (
     <div className="login">
@@ -37,7 +35,7 @@ const UserLogin = () => {
             required
           />
 
-          <Button type="submit">Login</Button>
+          <input type="submit" value={"login"} />
         </form>
       </div>
       <p>

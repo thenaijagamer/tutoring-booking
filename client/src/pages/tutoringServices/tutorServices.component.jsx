@@ -1,5 +1,7 @@
 import React from "react";
 
+import Tutor from "../../components/tutor/tutor.component";
+
 const TutoringServices = () => {
   return (
     <div className="tutors-search">
@@ -11,7 +13,7 @@ const TutoringServices = () => {
           </label>
           <input
             className="tutors-search__input"
-            type="text"
+            type="search"
             id="subject"
             name="subject"
           />
@@ -21,7 +23,7 @@ const TutoringServices = () => {
           </label>
           <input
             className="tutors-search__input"
-            type="text"
+            type="search"
             id="availability"
             name="availability"
           />
@@ -31,19 +33,13 @@ const TutoringServices = () => {
 
         <div className="tutor-list">
           <h3 className="tutor-list__header">Available Tutors</h3>
-          <ul>
-            <li>
-              <div className="tutor-info">
-                <h4>John Doe</h4>
-                <p>Subject: English</p>
-                <p>Qualifications: B.A. in English Literature</p>
-                <p>Experience: 3 years</p>
-              </div>
-              <div className="tutor-actions">
-                <a href="#">View Profile</a>
-                <a href="/session-booking">Book Session</a>
-              </div>
-            </li>
+          <ul className="tutor-list__container">
+            <Tutor />
+            <Tutor />
+            <Tutor />
+            <Tutor />
+            <Tutor />
+            <Tutor />
           </ul>
         </div>
       </div>
