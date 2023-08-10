@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "subject": "Mathematics",
+    "qualification": "PhD in Mathematics",
+    "experience": "10 years"
+  },
+  {
+    "id": 2,
+    "name": "Jane Doe",
+    "subject": "Physics",
+    "qualification": "MSc in Physics",
+    "experience": "8 years"
+  },
+  {
+    "id": 3,
+    "name": "Michael Johnson",
+    "subject": "Chemistry",
+    "qualification": "BSc in Chemistry",
+    "experience": "5 years"
+  },
+  {
+    "id": 4,
+    "name": "Emily Brown",
+    "subject": "English Literature",
+    "qualification": "MA in English Literature",
+    "experience": "7 years"
+  },
+  {
+    "id": 5,
+    "name": "Daniel Wilson",
+    "subject": "History",
+    "qualification": "BA in History",
+    "experience": "6 years"
+  },
+  {
+    "id": 6,
+    "name": "Sophia Martinez",
+    "subject": "Biology",
+    "qualification": "PhD in Biology",
+    "experience": "9 years"
+  },
+  {
+    "id": 7,
+    "name": "Liam Anderson",
+    "subject": "Computer Science",
+    "qualification": "MSc in Computer Science",
+    "experience": "4 years"
+  },
+  {
+    "id": 8,
+    "name": "Olivia Thomas",
+    "subject": "French",
+    "qualification": "BA in French",
+    "experience": "3 years"
+  },
+  {
+    "id": 9,
+    "name": "Noah Walker",
+    "subject": "Economics",
+    "qualification": "PhD in Economics",
+    "experience": "8 years"
+  },
+  {
+    "id": 10,
+    "name": "Ava White",
+    "subject": "Art",
+    "qualification": "BFA in Fine Arts",
+    "experience": "5 years"
+  }
+]

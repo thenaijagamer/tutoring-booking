@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 
 import Button from "../button/button.component";
 
-const Tutor = () => {
+const Tutor = ({ tutor }) => {
   return (
-    <li className="tutor">
+    <li className="tutor" id={tutor.id}>
       <div className="tutor__info">
-        <h4 className="tutor__header">Jane Smith</h4>
+        <h4 className="tutor__header">{tutor.name}</h4>
         <p className="tutor__info-item tutor__info-item--subj">
-          <strong>Subject:</strong> Mathematics
+          <strong>Subject:</strong> {tutor.subject}
         </p>
         <p className="tutor__info-item tutor__info-item--qual">
-          <strong>Qualifications:</strong> M.Sc. in Mathematics
+          <strong>Qualifications:</strong> {tutor.qualification}
         </p>
         <p className="tutor__info-item tutor__info-item--exp">
-          <strong>Experience:</strong> 5 years
+          <strong>Experience:</strong> {tutor.experience}
         </p>
       </div>
       <div className="tutor__actions">
