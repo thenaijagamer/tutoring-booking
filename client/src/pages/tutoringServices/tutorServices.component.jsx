@@ -34,7 +34,7 @@ const TutoringServices = () => {
             onChange={handleChange}
           />
 
-          <label htmlFor="availability" className="tutors-search__label">
+          {/* <label htmlFor="availability" className="tutors-search__label">
             Availability:
           </label>
           <input
@@ -42,9 +42,9 @@ const TutoringServices = () => {
             type="search"
             id="availability"
             name="availability"
-          />
+          /> */}
 
-          <input type="submit" value="Search" />
+          {/* <input type="submit" value="Search" /> */}
         </form>
 
         <div className="tutor-list">

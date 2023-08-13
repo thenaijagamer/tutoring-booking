@@ -22,7 +22,7 @@ const Tutor = ({ tutor }) => {
         <Link className="tutor__profile" to={"/"}>
           <Button>View Profile</Button>
         </Link>
-        <Link className="tutor__session" to={"/session-booking"}>
+        <Link className="tutor__session" to={`/session-booking/${tutor.id}`}>
           <Button>Book Session</Button>
         </Link>
       </div>

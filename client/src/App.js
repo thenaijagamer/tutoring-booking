@@ -27,10 +27,10 @@ function App() {
             <Route path="/services" element={<TutoringServices />} />
             <Route path="/history" element={<BookingHistory />} />
             <Route path="/session-booking" element={<SessionBookings />} />
+            <Route path="/session-booking">
+              <Route path=":id" element={<SessionBookings />} />
+            </Route>
             <Route path="/confirm" element={<BookingConfirmation />} />
-            {/* <Route path="/detail">
-          <Route path=":id" element={<DetailPage />} />
-        </Route> */}
           </Routes>
         </div>
         <Footer />

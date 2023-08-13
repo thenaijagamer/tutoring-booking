@@ -1,6 +1,16 @@
 import React from "react";
+import tutorsData from "../../utility/tutors.json";
+
+import { useParams } from "react-router-dom";
 
 const SessionBookings = () => {
+  const { id } = useParams();
+  const getTutorName = tutorsData
+    .filter((tutor) => id === tutor.id.toString())
+    .map((tutor) => tutor.name);
+  const getTutorSubject = tutorsData
+    .filter((tutor) => id === tutor.id.toString())
+    .map((tutor) => tutor.subject);
   return (
     <div className="session-booking">
       <div className="session-booking__container">
@@ -9,19 +19,21 @@ const SessionBookings = () => {
           <label className="session-booking__label" htmlFor="tutor">
             Tutor:
           </label>
-          <select className="session-booking__select" id="tutor" name="tutor">
-            <option value="1">Jane Smith</option>
-            <option value="2">John Doe</option>
-          </select>
+          <input
+            className="session-booking__select"
+            id="tutor"
+            name="tutor"
+            value={getTutorName}
+          />
 
           <label className="session-booking__label" htmlFor="subject">
             Subject:
           </label>
           <input
             className="session-booking__input"
-            type="text"
             id="subject"
             name="subject"
+            value={getTutorSubject}
           />
 
           <label className="session-booking__label" htmlFor="date">
