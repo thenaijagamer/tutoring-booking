@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import "./loadEnviroment.mjs";
+import "../loadEnviroment.mjs";
 
 const jwtSecret = process.env.JWT_SECRET;
 
@@ -17,10 +17,11 @@ const authMiddleware = (req, res, next) => {
     const decoded = jwt.verify(token, jwtSecret);
 
     // Attach user data to the request object
-    req.user = decoded.user;
+    req.user = decoded;
+    // console.log(decoded);
     next();
   } catch (error) {
-    console.error(error);
+    console.log(error);
     res.status(401).json({ message: "Token is not valid" });
   }
 };

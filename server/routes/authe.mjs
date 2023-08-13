@@ -2,13 +2,16 @@ import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import db from "../server.mjs";
+import "../loadEnviroment.mjs";
+
+const jwtSecret = process.env.JWT_SECRET;
 
 import User from "../models/User.mjs";
 
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  let collection = await db.collection("users");
+  let collection = db.collection("users");
   let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
@@ -73,7 +76,7 @@ router.post("/login", async (req, res) => {
     }
 
     // Create a JWT token
-    const token = jwt.sign({ id: user._id }, "your-secret-key", {
+    const token = jwt.sign({ id: user._id }, jwtSecret, {
       expiresIn: "1h",
     });
 
