@@ -6,6 +6,7 @@ import authRoutes from "./routes/authe.mjs";
 
 import authMiddleware from "./middleware/auth.mjs";
 import profileRoutes from "./routes/profile.mjs";
+import bookingsRoutes from "./routes/bookings.mjs";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -29,6 +30,7 @@ db.on("error", (error) => {
 // route
 app.use("/api/users", authRoutes);
 app.use("/api/profile", authMiddleware, profileRoutes);
+app.use("/api/bookings", authMiddleware, bookingsRoutes);
 
 // start the Express server
 app.listen(PORT, () => {

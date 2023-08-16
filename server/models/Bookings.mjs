@@ -1,22 +1,29 @@
 import mongoose from "mongoose";
-import validator from "validator";
 
-const userSchema = new mongoose.Schema({
-  name: { type: String, required: [true, "name is required"] },
-  email: {
+const bookingSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+
+  subject: {
     type: String,
     required: true,
-    unique: true,
-    lowercase: true,
-    validate: [validator.isEmail, "Not a valid email"],
   },
-  password: {
+  date: {
+    type: Date,
+    required: true,
+  },
+  startTime: {
     type: String,
-    required: [true, "Password is required"],
-    minlength: [8, "Password is less than 8 characters"],
+    required: true,
+  },
+  endTime: {
+    type: String,
+    required: true,
   },
 });
 
-const User = mongoose.model("User", userSchema);
-
-export default User;
+const Booking = mongoose.model("Booking", bookingSchema);
+export default Booking;
