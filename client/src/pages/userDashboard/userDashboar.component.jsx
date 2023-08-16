@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Bookings from "../../components/bookings/bookings.component";
 
-const UserDashboard = () => {
+const UserDashboard = ({ user, setUser }) => {
+  // useEffect(() => {
+  //   fetch("http://localhost:5050/api/profile", {
+  //     headers: {
+  //       "x-auth-token": localStorage.getItem("token"),
+  //     },
+  //   });
+  // }, []);
+
   return (
     <div className="user-dashboard">
       <div className="user-dashboard__container">

@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 
 import Header from "./components/header/header.component";
 import Home from "./pages/home/home.component";
@@ -14,6 +14,8 @@ import BookingConfirmation from "./components/confirmation/confirmation.componen
 import BookingHistory from "./pages/myBookings/myBookings.component";
 
 function App() {
+  const [user, setUser] = useState();
+  const [bookings, setBookings] = useState([]);
   return (
     <Router>
       <div className="page-container">
@@ -23,10 +25,24 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<UserRegistration />} />
             <Route path="/login" element={<UserLogin />} />
-            <Route path="/user-dashboard" element={<UserDashboard />} />
+            <Route
+              path="/user-dashboard"
+              element={<UserDashboard user={user} setUser={setUser} />}
+            />
             <Route path="/services" element={<TutoringServices />} />
-            <Route path="/history" element={<BookingHistory />} />
-            <Route path="/session-booking" element={<SessionBookings />} />
+            <Route
+              path="/history"
+              element={<BookingHistory bookings={bookings} />}
+            />
+            <Route
+              path="/session-booking"
+              element={
+                <SessionBookings
+                  bookings={bookings}
+                  setBookings={setBookings}
+                />
+              }
+            />
             <Route path="/session-booking">
               <Route path=":id" element={<SessionBookings />} />
             </Route>

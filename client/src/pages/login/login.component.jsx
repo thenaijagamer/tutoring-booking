@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
 const UserLogin = () => {
+  // const [detail,setDetails] = useState({
+  //   email : "", password : ""
+  // })
   return (
     <div className="login">
       <div className="login__container">
