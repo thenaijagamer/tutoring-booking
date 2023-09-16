@@ -15,7 +15,7 @@ import BookingHistory from "./pages/myBookings/myBookings.component";
 
 function App() {
   const [user, setUser] = useState();
-  const [bookings, addBooking] = useState([]);
+  const [bookings, setBooking] = useState([]);
   return (
     <Router>
       <div className="page-container">
@@ -34,14 +34,17 @@ function App() {
               path="/history"
               element={<BookingHistory bookings={bookings} />}
             />
-            <Route
-              path="/session-booking"
-              element={
-                <SessionBookings bookings={bookings} addBooking={addBooking} />
-              }
-            />
+
             <Route path="/session-booking">
-              <Route path=":id" element={<SessionBookings />} />
+              <Route
+                path=":id"
+                element={
+                  <SessionBookings
+                    bookings={bookings}
+                    setBooking={setBooking}
+                  />
+                }
+              />
             </Route>
             <Route path="/confirm" element={<BookingConfirmation />} />
           </Routes>

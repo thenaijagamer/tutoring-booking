@@ -1,90 +1,43 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import tutorsData from "../../utility/tutors.json";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-const SessionBookings = ({ bookings, addBooking }) => {
+const SessionBookings = ({ bookings, setBooking }) => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const { id } = useParams();
   const getTutorName = tutorsData
     .filter((tutor) => id === tutor.id.toString())
-    .map((tutor) => tutor.name);
+    .map((tutor) => tutor.name)
+    .toString();
   const getTutorSubject = tutorsData
     .filter((tutor) => id === tutor.id.toString())
-    .map((tutor) => tutor.subject);
-
+    .map((tutor) => tutor.subject)
+    .toString();
   const handleDateChange = (e) => {
     setDate(e.target.value);
   };
   const handleTimeChange = (e) => {
     setTime(e.target.value);
   };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setBookings(...Bookings, { name: getTutorName, subject: getTutorSubject });
-  // };+
 
-  // const [inputValues, setInputValues] = useState({
-  //   tutor: getTutorName[0],
-  //   subject: getTutorSubject[0],
-  //   date: "",
-  //   startTime: "09:00",
-  //   endTime: "10:00",
-  // });
-
-  // const [dataArray, setDataArray] = useState([]);
-
-  // const addObject = () => {
-  //   const newObject = { key: "value" }; // Replace with your object data
-  //   setDataArray((prevArray) => [...prevArray, newObject]);
-  //   console.log(dataArray);
-  // };
-
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setInputValues((prevValues) => ({
-  //     ...prevValues,
-  //     [name]: value,
-  //   }));
-  // };
-  // const handleBookings = () => {
-  //   const newData = { ...inputValues };
-  //   setBookings((prev) => [...prev, newData]);
-  //   console.log(bookings);
-  // };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(
-      "Form submitted with values:",
-      getTutorName,
-      getTutorSubject,
-      date,
-      time
-    );
-    // addBooking([
-    //   ...bookings,
-    //   {
-    //     tutor: getTutorName,
-    //     subject: getTutorSubject,
-    //     date: date,
-    //     time: time,
-    //   },
-    // ]);
-
-    // useNavigate("/confirm");
-    // console.log("Form submitted with values:", inputValues);
-    // // handleBookings();
-    // const newData = { ...inputValues };
-    // setBookings((prev) => [...prev, newData], console.log(bookings));
-    // // console.log(bookings);
-    // setInputValues({});
-
-    // You can perform further actions with the input values here
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(getTutorName, getTutorSubject, date, time);
+    setBooking([
+      ...bookings,
+      {
+        tutor: getTutorName,
+        subject: getTutorSubject,
+        date: date,
+        time: time,
+      },
+    ]);
   };
+
   return (
     <div className="session-booking">
       <div className="session-booking__container">
@@ -137,22 +90,20 @@ const SessionBookings = ({ bookings, addBooking }) => {
             required
             onChange={handleTimeChange}
           />
-          {/* <label className="session-booking__label" htmlFor="endTime">
-            Ending Time:
-          </label> */}
-          {/* <input
-            className="session-booking__input"
-            type="time"
-            id="endTime"
-            name="endTime"
-            value={inputValues.endTime}
-            required
-            onChange={handleInputChange}
-          /> */}
+
           {/* <Link to={"/confirm"}> */}
           <input type="submit" value="Book Session" />
           {/* </Link> */}
         </form>
+        <ul>
+          {bookings ? (
+            bookings.map((booking, index) => (
+              <li key={index}>{booking.tutor}</li>
+            ))
+          ) : (
+            <li>hello</li>
+          )}
+        </ul>
       </div>
     </div>
   );
