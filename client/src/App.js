@@ -15,7 +15,7 @@ import BookingHistory from "./pages/myBookings/myBookings.component";
 
 function App() {
   const [user, setUser] = useState();
-  const [bookings, setBookings] = useState([]);
+  const [bookings, addBooking] = useState([]);
   return (
     <Router>
       <div className="page-container">
@@ -37,10 +37,7 @@ function App() {
             <Route
               path="/session-booking"
               element={
-                <SessionBookings
-                  bookings={bookings}
-                  setBookings={setBookings}
-                />
+                <SessionBookings bookings={bookings} addBooking={addBooking} />
               }
             />
             <Route path="/session-booking">

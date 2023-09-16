@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import tutorsData from "../../utility/tutors.json";
-
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-const SessionBookings = ({ booking, setBooking }) => {
-  const [bookings, setBookings] = useState([{}]);
+const SessionBookings = ({ bookings, addBooking }) => {
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const { id } = useParams();
   const getTutorName = tutorsData
     .filter((tutor) => id === tutor.id.toString())
@@ -14,48 +16,72 @@ const SessionBookings = ({ booking, setBooking }) => {
     .filter((tutor) => id === tutor.id.toString())
     .map((tutor) => tutor.subject);
 
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
+  const handleTimeChange = (e) => {
+    setTime(e.target.value);
+  };
   // const handleSubmit = (e) => {
   //   e.preventDefault();
   //   setBookings(...Bookings, { name: getTutorName, subject: getTutorSubject });
+  // };+
+
+  // const [inputValues, setInputValues] = useState({
+  //   tutor: getTutorName[0],
+  //   subject: getTutorSubject[0],
+  //   date: "",
+  //   startTime: "09:00",
+  //   endTime: "10:00",
+  // });
+
+  // const [dataArray, setDataArray] = useState([]);
+
+  // const addObject = () => {
+  //   const newObject = { key: "value" }; // Replace with your object data
+  //   setDataArray((prevArray) => [...prevArray, newObject]);
+  //   console.log(dataArray);
   // };
 
-  const [inputValues, setInputValues] = useState({
-    tutor: getTutorName[0],
-    subject: getTutorSubject[0],
-    date: "",
-    startTime: "09:00",
-    endTime: "10:00",
-  });
-
-  const [dataArray, setDataArray] = useState([]);
-
-  const addObject = () => {
-    const newObject = { key: "value" }; // Replace with your object data
-    setDataArray((prevArray) => [...prevArray, newObject]);
-    console.log(dataArray);
-  };
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setInputValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  };
-  const handleBookings = () => {
-    const newData = { ...inputValues };
-    setBookings((prev) => [...prev, newData]);
-    console.log(bookings);
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setInputValues((prevValues) => ({
+  //     ...prevValues,
+  //     [name]: value,
+  //   }));
+  // };
+  // const handleBookings = () => {
+  //   const newData = { ...inputValues };
+  //   setBookings((prev) => [...prev, newData]);
+  //   console.log(bookings);
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form submitted with values:", inputValues);
-    // handleBookings();
-    const newData = { ...inputValues };
-    setBookings((prev) => [...prev, newData], console.log(bookings));
-    // console.log(bookings);
-    setInputValues({});
+    console.log(
+      "Form submitted with values:",
+      getTutorName,
+      getTutorSubject,
+      date,
+      time
+    );
+    // addBooking([
+    //   ...bookings,
+    //   {
+    //     tutor: getTutorName,
+    //     subject: getTutorSubject,
+    //     date: date,
+    //     time: time,
+    //   },
+    // ]);
+
+    // useNavigate("/confirm");
+    // console.log("Form submitted with values:", inputValues);
+    // // handleBookings();
+    // const newData = { ...inputValues };
+    // setBookings((prev) => [...prev, newData], console.log(bookings));
+    // // console.log(bookings);
+    // setInputValues({});
 
     // You can perform further actions with the input values here
   };
@@ -94,9 +120,9 @@ const SessionBookings = ({ booking, setBooking }) => {
             type="date"
             id="date"
             name="date"
-            value={inputValues.date}
+            value={date}
             required
-            onChange={handleInputChange}
+            onChange={handleDateChange}
           />
 
           <label className="session-booking__label" htmlFor="startTime">
@@ -107,14 +133,14 @@ const SessionBookings = ({ booking, setBooking }) => {
             type="time"
             id="startTime"
             name="startTime"
-            value={inputValues.startTime}
+            value={time}
             required
-            onChange={handleInputChange}
+            onChange={handleTimeChange}
           />
-          <label className="session-booking__label" htmlFor="endTime">
+          {/* <label className="session-booking__label" htmlFor="endTime">
             Ending Time:
-          </label>
-          <input
+          </label> */}
+          {/* <input
             className="session-booking__input"
             type="time"
             id="endTime"
@@ -122,9 +148,10 @@ const SessionBookings = ({ booking, setBooking }) => {
             value={inputValues.endTime}
             required
             onChange={handleInputChange}
-          />
-
+          /> */}
+          {/* <Link to={"/confirm"}> */}
           <input type="submit" value="Book Session" />
+          {/* </Link> */}
         </form>
       </div>
     </div>

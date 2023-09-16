@@ -3,6 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const UserLogin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Implement your login logic here
+  };
   // const [detail,setDetails] = useState({
   //   email : "", password : ""
   // })
