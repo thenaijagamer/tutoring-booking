@@ -6,7 +6,10 @@ const bookingSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-
+  tutor: {
+    type: String,
+    required: true,
+  },
   subject: {
     type: String,
     required: true,
@@ -16,10 +19,6 @@ const bookingSchema = new mongoose.Schema({
     required: true,
   },
   startTime: {
-    type: String,
-    required: true,
-  },
-  endTime: {
     type: String,
     required: true,
   },

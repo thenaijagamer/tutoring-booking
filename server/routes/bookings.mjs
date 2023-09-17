@@ -16,13 +16,15 @@ router.get("/history", authMiddleware, async (req, res) => {
 
 router.post("/history", authMiddleware, async (req, res) => {
   try {
-    const { user, subject, date, startTime, endTime } = req.body;
+    const { tutor, subject, date, startTime } = req.body;
+    // Get the user's ID from the authenticated request
+    const userId = req.user.id;
     const newBooking = new Booking({
-      user,
+      user: userId,
+      tutor,
       subject,
       date,
       startTime,
-      endTime,
     });
 
     const booking = await newBooking.save();
