@@ -1,23 +1,37 @@
-import React, { useEffect, useState } from "react";
-
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Implement your login logic here
+    try {
+      const response = await axios.post(
+        "http://localhost:5050/api/users/login",
+        {
+          email,
+          password,
+        }
+      );
+      console.log(response.data); // Handle successful login
+      localStorage.setItem("token", response.data.token);
+
+      // alert("you have successfully registered");
+      navigate("/userDashboard");
+    } catch (error) {
+      console.error(error);
+    }
   };
-  // const [detail,setDetails] = useState({
-  //   email : "", password : ""
-  // })
   return (
     <div className="login">
       <div className="login__container">
         <h2 className="login__header">User Login</h2>
-        <form className="login__form">
+        <form className="login__form" onSubmit={handleSubmit}>
           <label
             className="login__label login__label--email"
             htmlFor="loginEmail"
@@ -30,6 +44,8 @@ const UserLogin = () => {
             id="loginEmail"
             name="loginEmail"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label
@@ -44,6 +60,8 @@ const UserLogin = () => {
             id="loginPassword"
             name="loginPassword"
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
 
           <input type="submit" value={"login"} />

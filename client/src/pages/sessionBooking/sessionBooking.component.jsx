@@ -1,9 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import tutorsData from "../../utility/tutors.json";
-import { Navigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+
+import tutorsData from "../../utility/tutors.json";
 
 const SessionBookings = ({ bookings, setBooking }) => {
   const [date, setDate] = useState("");
@@ -17,12 +16,6 @@ const SessionBookings = ({ bookings, setBooking }) => {
     .filter((tutor) => id === tutor.id.toString())
     .map((tutor) => tutor.subject)
     .toString();
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-  };
-  const handleTimeChange = (e) => {
-    setTime(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -75,7 +68,7 @@ const SessionBookings = ({ bookings, setBooking }) => {
             name="date"
             value={date}
             required
-            onChange={handleDateChange}
+            onChange={(e) => setDate(e.target.value)}
           />
 
           <label className="session-booking__label" htmlFor="startTime">
@@ -88,7 +81,7 @@ const SessionBookings = ({ bookings, setBooking }) => {
             name="startTime"
             value={time}
             required
-            onChange={handleTimeChange}
+            onChange={(e) => setTime(e.target.value)}
           />
 
           {/* <Link to={"/confirm"}> */}
