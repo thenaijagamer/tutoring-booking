@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
+import useRequireAuth from "../../auth";
 
 import tutorsData from "../../utility/tutors.json";
 
 import Tutor from "../../components/tutor/tutor.component";
 
 const TutoringServices = () => {
+  useRequireAuth();
   const [searchValue, setSearchValue] = useState("");
   const handleChange = (e) => setSearchValue(e.target.value);
 

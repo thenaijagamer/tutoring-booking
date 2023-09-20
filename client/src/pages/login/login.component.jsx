@@ -22,7 +22,7 @@ const UserLogin = () => {
       localStorage.setItem("token", response.data.token);
 
       // alert("you have successfully registered");
-      navigate("/userDashboard");
+      navigate("/user-dashboard");
     } catch (error) {
       console.error(error);
     }

@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import useRequireAuth from "../../auth";
 
 import tutorsData from "../../utility/tutors.json";
 
 const SessionBookings = ({ bookings, setBooking }) => {
+  useRequireAuth();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const { id } = useParams();

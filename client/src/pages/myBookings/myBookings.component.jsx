@@ -1,7 +1,9 @@
 import React from "react";
+import useRequireAuth from "../../auth";
 import Bookings from "../../components/bookings/bookings.component";
 
 const BookingHistory = ({ bookings }) => {
+  useRequireAuth();
   return (
     <div className="bookings-page">
       <div className="bookings-page__container">
