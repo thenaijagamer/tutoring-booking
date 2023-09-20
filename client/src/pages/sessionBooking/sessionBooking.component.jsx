@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 import useRequireAuth from "../../auth";
 
 import tutorsData from "../../utility/tutors.json";
@@ -19,18 +20,38 @@ const SessionBookings = ({ bookings, setBooking }) => {
     .map((tutor) => tutor.subject)
     .toString();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(getTutorName, getTutorSubject, date, time);
-    setBooking([
-      ...bookings,
-      {
-        tutor: getTutorName,
-        subject: getTutorSubject,
-        date: date,
-        time: time,
-      },
-    ]);
+    try {
+      const response = await axios.post(
+        "http://localhost:5050/api/bookings/history",
+        {
+          tutor: getTutorName,
+          subject: getTutorSubject,
+          date: date,
+          startTime: time,
+        },
+        {
+          headers: {
+            "x-auth-token": localStorage.getItem("token"),
+          },
+        }
+      );
+      console.log(response.data); // Handle successful registration
+      alert("you have booked for session successfully");
+    } catch (error) {
+      console.error(error);
+    }
+    // setBooking([
+    //   ...bookings,
+    //   {
+    //     tutor: getTutorName,
+    //     subject: getTutorSubject,
+    //     date: date,
+    //     time: time,
+    //   },
+    // ]);
   };
 
   return (

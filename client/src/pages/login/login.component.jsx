@@ -18,13 +18,14 @@ const UserLogin = () => {
           password,
         }
       );
-      console.log(response.data); // Handle successful login
+      // console.log(response.data); // Handle successful login
       localStorage.setItem("token", response.data.token);
 
-      // alert("you have successfully registered");
       navigate("/user-dashboard");
+      // alert("you have successfully logged in");
     } catch (error) {
       console.error(error);
+      alert(error.message);
     }
   };
   return (

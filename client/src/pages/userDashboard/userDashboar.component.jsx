@@ -32,26 +32,30 @@ const UserDashboard = ({ user, setUser }) => {
     getProfile();
   }, []);
   return (
-    <div className="user-dashboard">
-      <div className="user-dashboard__container">
-        <h2 className="user-dashboard__header">
-          Welcome, {user ? user.name : "Loading..."}
-        </h2>
-        <div className="user-profile">
-          <h3 className="user-profile__header">Profile Information</h3>
-          <p className="user-profile__info user-profile__info--name">
-            <strong>Name:</strong> {user ? user.name : "Loading..."}
-          </p>
-          <p className="user-profile__info user-profile__info--email">
-            <strong>Email:</strong> {user ? user.email : "Loading..."}
-          </p>
-          <p className="user-profile__info user-profile__info--account-type">
-            <strong>Account Type:</strong> Student
-          </p>
+    <>
+      {user ? (
+        <div className="user-dashboard">
+          <div className="user-dashboard__container">
+            <h2 className="user-dashboard__header">Welcome, {user.name}</h2>
+            <div className="user-profile">
+              <h3 className="user-profile__header">Profile Information</h3>
+              <p className="user-profile__info user-profile__info--name">
+                <strong>Name:</strong> {user.name}
+              </p>
+              <p className="user-profile__info user-profile__info--email">
+                <strong>Email:</strong> {user.email}
+              </p>
+              <p className="user-profile__info user-profile__info--account-type">
+                <strong>Account Type:</strong> Student
+              </p>
+            </div>
+            <Bookings />
+          </div>
         </div>
-        <Bookings />
-      </div>
-    </div>
+      ) : (
+        <div>Loading...</div>
+      )}
+    </>
   );
 };
 

@@ -3,7 +3,8 @@ import { useState } from "react";
 
 import BookingCard from "../bookingCard/bookingCard.component";
 
-const Bookings = ({ bookings }) => {
+const Bookings = ({ bookings, setBoo }) => {
+
   return (
     <div className="booking-list">
       <h3 className="booking-list__header">Upcoming Bookings</h3>

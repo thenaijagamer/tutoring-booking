@@ -1,10 +1,16 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Button from "../button/button.component";
 
 const Header = () => {
   const pathName = useLocation().pathname;
+  const navigate = useNavigate();
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+    alert("You have logged out successfully");
+  };
   return (
     <header className="header">
       {pathName === "/" || pathName === "/register" || pathName === "/login" ? (
@@ -49,9 +55,9 @@ const Header = () => {
               Booking history
             </Link>
           </div>
-          <Link className="header__logout" to={"/"}>
+          <button className="header__logout" onClick={logout}>
             Logout
-          </Link>
+          </button>
         </div>
       )}
     </header>
