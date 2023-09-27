@@ -19,6 +19,42 @@ const SessionBookings = ({ bookings, setBooking }) => {
     .filter((tutor) => id === tutor.id.toString())
     .map((tutor) => tutor.subject)
     .toString();
+  const handleTimeChange = (e) => {
+    let value = e.target.value;
+    const min = e.target.min;
+    const max = e.target.max;
+
+    if (value < min || value > max) {
+      console.log("Error");
+      setTime("");
+    } else {
+      setTime(e.target.value);
+    }
+
+    //  alert("time doesnt correspond")
+  };
+
+  const currentDate = new Date();
+
+  // Get the year, month, and day components
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // Months are zero-based (0 = January, 11 = December)
+  const day = currentDate.getDate();
+
+  const dateNow = `${year}-${
+    month.toString().length == 1 ? `0${month}` : month
+  }-${day.toString().length == 1 ? `0${day}` : day}`;
+
+  // const startDate = new Date(dateNow);
+  // const currentDateMax = startDate.setDate(startDate.getDate() + 30);
+  // // Get the year, month, and day components
+  // const yearMax = currentDateMax.getFullYear();
+  // const monthMax = currentDateMax.getMonth() + 1; // Months are zero-based (0 = January, 11 = December)
+  // const dayMax = currentDateMax.getDate();
+  // const dateMax = `${yearMax}-${
+  //   monthMax.toString().length == 1 ? `0${monthMax}` : monthMax
+  // }-${dayMax.toString().length == 1 ? `0${dayMax}` : dayMax}`;
+  // console.log(dateNow, dateMax);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,6 +126,8 @@ const SessionBookings = ({ bookings, setBooking }) => {
             id="date"
             name="date"
             value={date}
+            min={dateNow}
+            // max="2017-04-30"
             required
             onChange={(e) => setDate(e.target.value)}
           />
@@ -103,8 +141,10 @@ const SessionBookings = ({ bookings, setBooking }) => {
             id="startTime"
             name="startTime"
             value={time}
-            required
+            min={"09:00"}
+            max={"17:00"}
             onChange={(e) => setTime(e.target.value)}
+            required
           />
 
           {/* <Link to={"/confirm"}> */}

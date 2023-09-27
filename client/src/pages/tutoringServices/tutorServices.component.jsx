@@ -53,7 +53,7 @@ const TutoringServices = () => {
           <h3 className="tutor-list__header">Available Tutors</h3>
           <ul className="tutor-list__container">
             {filteredTutorsData.map((tutor) => (
-              <Tutor tutor={tutor} />
+              <Tutor tutor={tutor} key={tutor.id} />
             ))}
           </ul>
         </div>

@@ -47,11 +47,6 @@ function App() {
               />
             </Route>
             <Route path="/confirm" element={<BookingConfirmation />} />
-            {/* <ProtectedRoute
-              path="/protected-route-1"
-              element={<ProtectedComponent1 />}
-              user={user}
-            /> */}
           </Routes>
         </div>
         <Footer />
