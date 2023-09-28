@@ -1,7 +1,15 @@
 import React from "react";
 
-const Button = ({ children, style }) => {
-  return <button className={`button ${style}`}>{children}</button>;
+const Button = ({ children, confirmB, cancelB }) => {
+  return (
+    <button
+      className={`button ${confirmB ? "button__confirm" : ""} ${
+        cancelB ? "button__cancel" : ""
+      }`}
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;

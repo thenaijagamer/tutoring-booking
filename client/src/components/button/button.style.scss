@@ -14,6 +14,19 @@
   &:hover {
     background-color: $color-accent-h;
   }
+  &__confirm {
+    background-color: $color-secondary-dark;
+    margin-right: 2rem;
+    &:hover {
+      background-color: $color-secondary-dark-h;
+    }
+  }
+  &__cancel {
+    background-color: $color-tertiary-dark;
+    &:hover {
+      background-color: $color-tertiary-dark-h;
+    }
+  }
 }
 // .ml-button {
 //   margin-left: 1rem;
