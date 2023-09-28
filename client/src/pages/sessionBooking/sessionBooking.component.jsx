@@ -6,7 +6,7 @@ import useRequireAuth from "../../auth";
 
 import tutorsData from "../../utility/tutors.json";
 
-const SessionBookings = ({ bookings, setBooking }) => {
+const SessionBookings = () => {
   useRequireAuth();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -19,20 +19,6 @@ const SessionBookings = ({ bookings, setBooking }) => {
     .filter((tutor) => id === tutor.id.toString())
     .map((tutor) => tutor.subject)
     .toString();
-  const handleTimeChange = (e) => {
-    let value = e.target.value;
-    const min = e.target.min;
-    const max = e.target.max;
-
-    if (value < min || value > max) {
-      console.log("Error");
-      setTime("");
-    } else {
-      setTime(e.target.value);
-    }
-
-    //  alert("time doesnt correspond")
-  };
 
   const currentDate = new Date();
 
@@ -41,20 +27,28 @@ const SessionBookings = ({ bookings, setBooking }) => {
   const month = currentDate.getMonth() + 1; // Months are zero-based (0 = January, 11 = December)
   const day = currentDate.getDate();
 
+  // Create a formatted date string (YYYY-MM-DD)
   const dateNow = `${year}-${
     month.toString().length == 1 ? `0${month}` : month
   }-${day.toString().length == 1 ? `0${day}` : day}`;
 
-  // const startDate = new Date(dateNow);
-  // const currentDateMax = startDate.setDate(startDate.getDate() + 30);
-  // // Get the year, month, and day components
-  // const yearMax = currentDateMax.getFullYear();
-  // const monthMax = currentDateMax.getMonth() + 1; // Months are zero-based (0 = January, 11 = December)
-  // const dayMax = currentDateMax.getDate();
-  // const dateMax = `${yearMax}-${
-  //   monthMax.toString().length == 1 ? `0${monthMax}` : monthMax
-  // }-${dayMax.toString().length == 1 ? `0${dayMax}` : dayMax}`;
-  // console.log(dateNow, dateMax);
+  // Create a Date object from the input date dateNow
+  const originalDate = new Date(year, month - 1, day);
+
+  // Add the specified number of days to the originalDate
+  const currentDateMax = new Date(
+    originalDate.setDate(originalDate.getDate() + 30)
+  );
+
+  // Get the year, month, and day components from new date object
+  const yearMax = currentDateMax.getFullYear();
+  const monthMax = currentDateMax.getMonth() + 1; // Months are zero-based (0 = January, 11 = December)
+  const dayMax = currentDateMax.getDate();
+
+  // Create a formatted date string (YYYY-MM-DD) for new date
+  const dateMax = `${yearMax}-${
+    monthMax.toString().length == 1 ? `0${monthMax}` : monthMax
+  }-${dayMax.toString().length == 1 ? `0${dayMax}` : dayMax}`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -74,20 +68,11 @@ const SessionBookings = ({ bookings, setBooking }) => {
           },
         }
       );
-      console.log(response.data); // Handle successful registration
+      console.log(response.data); // Handle successful booking
       alert("you have booked for session successfully");
     } catch (error) {
       console.error(error);
     }
-    // setBooking([
-    //   ...bookings,
-    //   {
-    //     tutor: getTutorName,
-    //     subject: getTutorSubject,
-    //     date: date,
-    //     time: time,
-    //   },
-    // ]);
   };
 
   return (
@@ -127,7 +112,7 @@ const SessionBookings = ({ bookings, setBooking }) => {
             name="date"
             value={date}
             min={dateNow}
-            // max="2017-04-30"
+            max={dateMax}
             required
             onChange={(e) => setDate(e.target.value)}
           />
@@ -135,31 +120,24 @@ const SessionBookings = ({ bookings, setBooking }) => {
           <label className="session-booking__label" htmlFor="startTime">
             Starting Time:
           </label>
-          <input
-            className="session-booking__input"
-            type="time"
+          <select
             id="startTime"
-            name="startTime"
-            value={time}
-            min={"09:00"}
-            max={"17:00"}
             onChange={(e) => setTime(e.target.value)}
             required
-          />
-
-          {/* <Link to={"/confirm"}> */}
+          >
+            <option value="">Choose time</option>
+            <option value="09:00 AM">9:00 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="01:00 PM">1:00 PM</option>
+            <option value="02:00 PM">2:00 PM</option>
+            <option value="03:00 PM">3:00 PM</option>
+            <option value="04:00 PM">4:00 PM</option>
+            <option value="05:00 PM">5:00 PM</option>
+          </select>
           <input type="submit" value="Book Session" />
-          {/* </Link> */}
         </form>
-        <ul>
-          {bookings ? (
-            bookings.map((booking, index) => (
-              <li key={index}>{booking.tutor}</li>
-            ))
-          ) : (
-            <li>hello</li>
-          )}
-        </ul>
       </div>
     </div>
   );
