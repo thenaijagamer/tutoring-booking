@@ -4,11 +4,13 @@ main {
   margin: 5rem auto;
   text-align: center;
   position: absolute;
-  transform: translate(50%);
+  transform: translateY(50%) translateX(50%);
   right: 50%;
+  bottom: 50%;
 }
 .background {
-  background-color: #333333;
+  backdrop-filter: blur(3px);
+  background-color: rgba(51, 51, 51, 0.2);
   width: 100vw;
   height: 100vh;
   z-index: 2;

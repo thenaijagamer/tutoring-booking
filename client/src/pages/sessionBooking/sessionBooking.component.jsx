@@ -1,7 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import useRequireAuth from "../../auth";
 
 import tutorsData from "../../utility/tutors.json";
@@ -11,7 +10,7 @@ const SessionBookings = () => {
   useRequireAuth();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [confirm, setConfirm] = useState(false);
+  const [confirm, setConfirm] = useState();
   const { id } = useParams();
   const getTutorName = tutorsData
     .filter((tutor) => id === tutor.id.toString())
@@ -52,36 +51,29 @@ const SessionBookings = () => {
     monthMax.toString().length == 1 ? `0${monthMax}` : monthMax
   }-${dayMax.toString().length == 1 ? `0${dayMax}` : dayMax}`;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log(getTutorName, getTutorSubject, date, time);
-    try {
-      const response = await axios.post(
-        "http://localhost:5050/api/bookings/history",
-        {
-          tutor: getTutorName,
-          subject: getTutorSubject,
-          date: date,
-          startTime: time,
-        },
-        {
-          headers: {
-            "x-auth-token": localStorage.getItem("token"),
-          },
-        }
-      );
-      console.log(response.data); // Handle successful booking
-      alert("you have booked for session successfully");
-    } catch (error) {
-      console.error(error);
-    }
+    setConfirm(true);
   };
 
   return (
     <>
-      <div className="background"></div>
+      {confirm ? (
+        <div className="background">
+          <BookingConfirmation
+            setConfirm={setConfirm}
+            name={getTutorName}
+            subject={getTutorSubject}
+            date={date}
+            time={time}
+          />
+        </div>
+      ) : (
+        ""
+      )}
+
       <div className="session-booking">
-        {!confirm ? <BookingConfirmation /> : ""}
         <div className="session-booking__container">
           <h2 className="session-booking__header">Tutor Booking</h2>
           <form className="session-booking__form" onSubmit={handleSubmit}>
