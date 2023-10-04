@@ -1,36 +1,56 @@
 main {
-  max-width: 600px;
+  max-width: 60rem;
   width: 70%;
-  margin: 50px auto;
+  margin: 5rem auto;
   text-align: center;
+  position: absolute;
+  transform: translate(50%);
+  right: 50%;
 }
-
-.container {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.background {
+  background-color: #333333;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333333;
+  @include header;
 }
 
-.confirmation-info {
-  margin-bottom: 40px;
-}
-
-.confirmation-info h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333333;
-}
-
-.confirmation-info p {
-  color: #666666;
-  margin-bottom: 5px;
+.confirmation {
+  &__container {
+    @include container;
+    position: relative;
+  }
+  &__info {
+    margin-bottom: 40px;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #333333;
+    }
+    p {
+      color: #666666;
+      margin-bottom: 5px;
+    }
+  }
+  &__quit {
+    // display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2rem;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    &:hover {
+      fill: $color-accent;
+    }
+  }
 }
 
 // .confirmation__actions {

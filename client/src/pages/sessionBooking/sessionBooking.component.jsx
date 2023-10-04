@@ -5,11 +5,13 @@ import axios from "axios";
 import useRequireAuth from "../../auth";
 
 import tutorsData from "../../utility/tutors.json";
+import BookingConfirmation from "../../components/confirmation/confirmation.component";
 
 const SessionBookings = () => {
   useRequireAuth();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [confirm, setConfirm] = useState(false);
   const { id } = useParams();
   const getTutorName = tutorsData
     .filter((tutor) => id === tutor.id.toString())
@@ -76,70 +78,74 @@ const SessionBookings = () => {
   };
 
   return (
-    <div className="session-booking">
-      <div className="session-booking__container">
-        <h2 className="session-booking__header">Tutor Booking</h2>
-        <form className="session-booking__form" onSubmit={handleSubmit}>
-          <label className="session-booking__label" htmlFor="tutor">
-            Tutor:
-          </label>
-          <input
-            className="session-booking__select"
-            id="tutor"
-            name="tutor"
-            value={getTutorName}
-            readOnly
-          />
+    <>
+      <div className="background"></div>
+      <div className="session-booking">
+        {!confirm ? <BookingConfirmation /> : ""}
+        <div className="session-booking__container">
+          <h2 className="session-booking__header">Tutor Booking</h2>
+          <form className="session-booking__form" onSubmit={handleSubmit}>
+            <label className="session-booking__label" htmlFor="tutor">
+              Tutor:
+            </label>
+            <input
+              className="session-booking__select"
+              id="tutor"
+              name="tutor"
+              value={getTutorName}
+              readOnly
+            />
 
-          <label className="session-booking__label" htmlFor="subject">
-            Subject:
-          </label>
-          <input
-            className="session-booking__input"
-            id="subject"
-            name="subject"
-            value={getTutorSubject}
-            readOnly
-          />
+            <label className="session-booking__label" htmlFor="subject">
+              Subject:
+            </label>
+            <input
+              className="session-booking__input"
+              id="subject"
+              name="subject"
+              value={getTutorSubject}
+              readOnly
+            />
 
-          <label className="session-booking__label" htmlFor="date">
-            Date:
-          </label>
-          <input
-            className="session-booking__input"
-            type="date"
-            id="date"
-            name="date"
-            value={date}
-            min={dateNow}
-            max={dateMax}
-            required
-            onChange={(e) => setDate(e.target.value)}
-          />
+            <label className="session-booking__label" htmlFor="date">
+              Date:
+            </label>
+            <input
+              className="session-booking__input"
+              type="date"
+              id="date"
+              name="date"
+              value={date}
+              min={dateNow}
+              max={dateMax}
+              required
+              onChange={(e) => setDate(e.target.value)}
+            />
 
-          <label className="session-booking__label" htmlFor="startTime">
-            Starting Time:
-          </label>
-          <select
-            id="startTime"
-            onChange={(e) => setTime(e.target.value)}
-            required
-          >
-            <option value="">Choose time</option>
-            <option value="09:00 AM">9:00 AM</option>
-            <option value="10:00 AM">10:00 AM</option>
-            <option value="11:00 AM">11:00 AM</option>
-            <option value="12:00 PM">12:00 PM</option>
-            <option value="01:00 PM">1:00 PM</option>
-            <option value="02:00 PM">2:00 PM</option>
-            <option value="03:00 PM">3:00 PM</option>
-            <option value="04:00 PM">4:00 PM</option>
-            <option value="05:00 PM">5:00 PM</option>
-          </select>
-          <input type="submit" value="Book Session" />
-        </form>
+            <label className="session-booking__label" htmlFor="startTime">
+              Starting Time:
+            </label>
+            <select
+              id="startTime"
+              onChange={(e) => setTime(e.target.value)}
+              required
+            >
+              <option value="">Choose time</option>
+              <option value="09:00 AM">9:00 AM</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="01:00 PM">1:00 PM</option>
+              <option value="02:00 PM">2:00 PM</option>
+              <option value="03:00 PM">3:00 PM</option>
+              <option value="04:00 PM">4:00 PM</option>
+              <option value="05:00 PM">5:00 PM</option>
+            </select>
+            <input type="submit" value="Book Session" />
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

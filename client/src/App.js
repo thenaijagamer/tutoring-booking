@@ -21,6 +21,7 @@ function App() {
       <div className="page-container">
         <div className="content-wrap">
           <Header />
+          
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<UserRegistration />} />

@@ -1,15 +1,14 @@
 import React from "react";
 import Button from "../button/button.component";
+import { ReactComponent as CrossIcon } from "../../icons/cross.svg";
 
 const BookingConfirmation = () => {
-  const confirmB = true;
-  const cancelB = true;
-
   return (
     <main>
-      <div className="container">
+      <div className="confirmation__container">
+        <CrossIcon className="confirmation__quit" />
         <h2>Booking Confirmation</h2>
-        <div className="confirmation-info">
+        <div className="confirmation__info">
           <h3>Booking Details</h3>
           <p>
             <strong>Tutor:</strong> Jane Smith
@@ -25,8 +24,8 @@ const BookingConfirmation = () => {
           </p>
         </div>
         <div className="confirmation__actions">
-          <Button confirmB={confirmB}>Book session </Button>
-          <Button cancelB={cancelB}>cancel Session</Button>
+          <Button>Book session</Button>
+          {/* <Button cancelB>cancel Session</Button> */}
         </div>
       </div>
     </main>
