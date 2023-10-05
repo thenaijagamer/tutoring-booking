@@ -29,7 +29,12 @@ const BookingConfirmation = ({ setConfirm, name, subject, date, time }) => {
   return (
     <main>
       <div className="confirmation__container">
-        <CrossIcon className="confirmation__quit" onClick={setConfirm(false)} />
+        <CrossIcon
+          className="confirmation__quit"
+          onClick={() => {
+            setConfirm(false);
+          }}
+        />
         <h2>Booking Confirmation</h2>
         <div className="confirmation__info">
           <h3>Booking Details</h3>
@@ -47,7 +52,13 @@ const BookingConfirmation = ({ setConfirm, name, subject, date, time }) => {
           </p>
         </div>
         <div className="confirmation__actions">
-          <Button onClick={handleClick}>Book session</Button>
+          <Button
+            onClick={() => {
+              console.log("clicked");
+            }}
+          >
+            Book session
+          </Button>
           {/* <Button cancelB>cancel Session</Button> */}
         </div>
       </div>

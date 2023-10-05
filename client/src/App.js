@@ -10,7 +10,6 @@ import UserDashboard from "./pages/userDashboard/userDashboar.component";
 import TutoringServices from "./pages/tutoringServices/tutorServices.component";
 import SessionBookings from "./pages/sessionBooking/sessionBooking.component";
 import Footer from "./components/footer/footer.component";
-import BookingConfirmation from "./components/confirmation/confirmation.component";
 import BookingHistory from "./pages/myBookings/myBookings.component";
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
       <div className="page-container">
         <div className="content-wrap">
           <Header />
-          
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<UserRegistration />} />
@@ -47,7 +46,6 @@ function App() {
                 }
               />
             </Route>
-            <Route path="/confirm" element={<BookingConfirmation />} />
           </Routes>
         </div>
         <Footer />

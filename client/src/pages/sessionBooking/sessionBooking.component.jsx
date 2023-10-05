@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useRequireAuth from "../../auth";
 
@@ -10,7 +10,7 @@ const SessionBookings = () => {
   useRequireAuth();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [confirm, setConfirm] = useState();
+  const [confirm, setConfirm] = useState(false);
   const { id } = useParams();
   const getTutorName = tutorsData
     .filter((tutor) => id === tutor.id.toString())
