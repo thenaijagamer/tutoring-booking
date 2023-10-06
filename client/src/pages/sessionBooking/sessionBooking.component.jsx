@@ -60,7 +60,7 @@ const SessionBookings = () => {
   return (
     <>
       {confirm ? (
-        <div className="background">
+        <div className="popup">
           <BookingConfirmation
             setConfirm={setConfirm}
             name={getTutorName}

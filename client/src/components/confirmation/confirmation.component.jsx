@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Button from "../button/button.component";
-import { ReactComponent as CrossIcon } from "../../icons/cross.svg";
+import { ReactComponent as CancelIcon } from "../../icons/cancel-circle.svg";
+import { ReactComponent as CheckIcon } from "../../icons/checkbox-checked.svg";
 
 const BookingConfirmation = ({ setConfirm, name, subject, date, time }) => {
   const handleClick = async () => {
@@ -29,7 +30,7 @@ const BookingConfirmation = ({ setConfirm, name, subject, date, time }) => {
   return (
     <main>
       <div className="confirmation__container">
-        <CrossIcon
+        {/* <CancelIcon
           className="confirmation__quit"
           onClick={() => {
             setConfirm(false);
@@ -52,15 +53,18 @@ const BookingConfirmation = ({ setConfirm, name, subject, date, time }) => {
           </p>
         </div>
         <div className="confirmation__actions">
-          <Button
-            onClick={() => {
-              console.log("clicked");
-            }}
-          >
+          <Button confirmB handleClick={handleClick}>
             Book session
           </Button>
-          {/* <Button cancelB>cancel Session</Button> */}
+        </div> */}
+        <CheckIcon className="confirmation__check-icon" />
+        <div className="confirmation__message">Session booked successfully</div>
+        <div className="confirmation__sub-message">
+          You have successfully booked for a tutoring session with AcadeBooker.
+          A reminder will be sent to your email an hour before the start of the
+          session. Thanks for booking with AcadeBooker.
         </div>
+        <Button>Go to the user dashboard</Button>
       </div>
     </main>
   );
