@@ -1,11 +1,8 @@
 import React from "react";
 
-const Button = ({ children, confirmB, cancelB, handleClick }) => {
+const Button = ({ children, onclick }) => {
   return (
-    <button
-      onClick={confirmB ? handleClick : ""}
-      className={`button ${cancelB ? "button__cancel" : ""}`}
-    >
+    <button onClick={onclick} className="button">
       {children}
     </button>
   );
